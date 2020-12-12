@@ -86,10 +86,8 @@ fn countOccupiedNeighbors(row: usize, column: usize, seats: Seats) usize {
                 const s = seats[@intCast(usize, r)][@intCast(usize, c)];
                 if (s == .Occupied) n += 1;
                 if (s == .Floor) continue;
-                break;
-            } else {
-                break;
             }
+            break;
         }
     }
     return n;
