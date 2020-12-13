@@ -32,10 +32,9 @@ const Grid = struct {
     }
 
     fn at(self: Grid, row: usize, column: usize) bool {
-        var r = row % Height;
         var c = column % Width;
-        //std.debug.print("Checking: {}, {} => {}\n", .{ row, column, self.data[r][c] });
-        return self.data[r][c];
+        //std.debug.print("Checking: {}, {} => {}\n", .{ row, column, self.data[row][c] });
+        return self.data[row][c];
     }
 };
 
@@ -48,7 +47,7 @@ pub fn main() void {
     var row: usize = 0;
     var column: usize = 0;
     var treeCount: usize = 0;
-    while (row <= Grid.Height) {
+    while (row < Grid.Height ) {
         const isTree = grid.at(row, column);
         if (isTree)
             treeCount += 1;
